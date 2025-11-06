@@ -4,9 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:safespace_doctor_app/authentication/regesration.dart';
 import 'package:safespace_doctor_app/authentication/auth_service.dart';
-import 'package:safespace_doctor_app/screens/home_screen.dart'; // ✅ Replace NavManager with your actual home screen
-
-
+import 'package:safespace_doctor_app/navigation/navmanager.dart'; // ✅ Import NavManager instead of HomeScreen
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -39,10 +37,10 @@ class _LoginPageState extends State<LoginPage> {
         password: _passwordController.text.trim(),
       );
       if (response.user != null && mounted) {
-        // ✅ Navigate to HomeScreen instead of NavManager
+        // ✅ Navigate to NavManager instead of HomeScreen
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
+          MaterialPageRoute(builder: (context) => const NavManager()),
         );
       }
     } catch (e) {
@@ -65,10 +63,10 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _continueAsGuest() {
-    // ✅ Direct guest navigation
+    // ✅ Navigate to NavManager for guest access (if you still want guest mode)
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
+      MaterialPageRoute(builder: (context) => const NavManager()),
     );
   }
 
@@ -340,7 +338,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       const SizedBox(height: 25.0),
 
-                      // Guest button
+                      // Guest button (remove if you don't want guest mode)
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(

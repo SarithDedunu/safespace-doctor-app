@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:safespace_doctor_app/screens/home_screen.dart';
 import 'package:safespace_doctor_app/screens/onboarding_screen.dart';
-// <-- Add your actual home screen here
+import 'package:safespace_doctor_app/navigation/navmanager.dart'; // ✅ Import NavManager
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -23,8 +22,8 @@ class AuthGate extends StatelessWidget {
         final session = Supabase.instance.client.auth.currentSession;
 
         if (session != null) {
-          // ✅ User logged in — go to home screen
-          return const HomeScreen();
+          // ✅ User logged in — go to NavManager (which contains bottom navigation)
+          return const NavManager();
         } else {
           // 🚪 User not logged in — go to onboarding/login/signup flow
           return const OnboardingScreen();
