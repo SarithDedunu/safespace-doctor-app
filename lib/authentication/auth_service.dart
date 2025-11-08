@@ -56,7 +56,7 @@ class AuthService {
             .maybeSingle();
 
         String? userRole;
-        if (roleResponse != null && roleResponse is Map && roleResponse.containsKey('role')) {
+        if (roleResponse != null && roleResponse.containsKey('role')) {
           userRole = roleResponse['role'] as String?;
         }
 
@@ -68,7 +68,7 @@ class AuthService {
                 .select('role')
                 .eq('user_id', response.user!.id)
                 .single();
-            if (simple != null && simple is Map && simple.containsKey('role')) {
+            if (simple.containsKey('role')) {
               userRole = simple['role'] as String?;
             }
           } catch (_) {
@@ -143,7 +143,7 @@ class AuthService {
           .maybeSingle();
 
       // Extract role defensively
-      if (resp != null && resp is Map && resp.containsKey('role')) {
+      if (resp != null && resp.containsKey('role')) {
         return resp['role'] as String?;
       }
 

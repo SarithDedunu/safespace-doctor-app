@@ -16,7 +16,7 @@ class StorageService {
       final filePath = '$userId/$fileName';
 
       // Upload file to Supabase Storage
-      final response = await _supabase.storage
+      await _supabase.storage
           .from('documents')
           .upload(filePath, file);
 

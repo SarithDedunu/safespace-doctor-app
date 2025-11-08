@@ -3,7 +3,7 @@ import 'package:safespace_doctor_app/navigation/navbar.dart';
 import 'package:safespace_doctor_app/screens/home_screen.dart';
 import 'package:safespace_doctor_app/screens/patients_screen.dart';
 import 'package:safespace_doctor_app/screens/appointment_screen.dart';
-import 'package:safespace_doctor_app/screens/profile_screen.dart.dart';
+import 'package:safespace_doctor_app/screens/profile_screen.dart';
 
 
 class NavManager extends StatefulWidget {

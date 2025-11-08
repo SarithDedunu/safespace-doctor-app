@@ -7,8 +7,6 @@ import 'package:safespace_doctor_app/authentication/regesration.dart';
 import 'package:safespace_doctor_app/screens/appointment_screen.dart';
 
 
-
-
 // Create a RouteObserver
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 
