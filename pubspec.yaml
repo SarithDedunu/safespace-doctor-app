@@ -20,6 +20,10 @@ dependencies:
   line_icons: ^2.0.3
   google_nav_bar: ^5.0.7
   provider: ^6.1.2
+  webview_flutter: ^4.4.2
+  webview_flutter_android: ^3.3.0
+  webview_flutter_wkwebview: ^3.3.0
+  
 
 dev_dependencies:
   flutter_test:
