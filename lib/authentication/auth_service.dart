@@ -134,21 +134,39 @@ class AuthService {
   Future<String?> getUserRole() async {
     try {
       final user = _supabase.auth.currentUser;
-      if (user == null) return null;
+      debugPrint('👤 DEBUG: getUserRole - Current user: ${user?.email} (ID: ${user?.id})');
+      
+      if (user == null) {
+        debugPrint('❌ DEBUG: No authenticated user found');
+        return null;
+      }
 
-      final resp = await _supabase
-          .from('user_roles')
-          .select('role')
-          .eq('user_id', user.id)
-          .maybeSingle();
+      debugPrint('🔍 DEBUG: Querying user_roles table for user_id: ${user.id}');
+      
+      try {
+        final resp = await _supabase
+            .from('user_roles')
+            .select('role')
+            .eq('user_id', user.id)
+            .maybeSingle();
 
-      // Extract role defensively
-      if (resp != null && resp.containsKey('role')) {
-        return resp['role'] as String?;
+        debugPrint('📋 DEBUG: user_roles query result: $resp');
+        
+        // Extract role defensively
+        if (resp != null && resp.containsKey('role')) {
+          final role = resp['role'] as String?;
+          debugPrint('✅ DEBUG: User role found: $role');
+          return role;
+        } else {
+          debugPrint('⚠️ DEBUG: No role found or invalid response format');
+        }
+      } catch (e) {
+        debugPrint('❌ DEBUG: Error querying user_roles table: $e');
       }
 
       return null;
     } catch (e) {
+      debugPrint('❌ DEBUG: Error in getUserRole: $e');
       return null;
     }
   }

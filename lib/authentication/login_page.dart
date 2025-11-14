@@ -125,9 +125,9 @@ class _LoginPageState extends State<LoginPage> {
     return LoginScaffold(
       child: Column(
         children: [
-          const Expanded(flex: 1, child: SizedBox(height: 40)),
+          const Expanded(flex: 1, child: SizedBox(height: 30)),
           Expanded(
-            flex: 6,
+            flex: 2,
             child: Container(
               padding: const EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 20.0),
               decoration: const BoxDecoration(
@@ -210,7 +210,9 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.black45,
                             ),
                             onPressed: () {
-                              setState(() => _obscurePassword = !_obscurePassword);
+                              setState(
+                                () => _obscurePassword = !_obscurePassword,
+                              );
                             },
                           ),
                         ),
@@ -262,7 +264,12 @@ class _LoginPageState extends State<LoginPage> {
                         child: ElevatedButton(
                           onPressed: _isLoading ? null : _submit,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 16, 116, 230),
+                            backgroundColor: const Color.fromARGB(
+                              255,
+                              16,
+                              116,
+                              230,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -301,7 +308,7 @@ class _LoginPageState extends State<LoginPage> {
                           GestureDetector(
                             onTap: _navigateToSignUp,
                             child: const Text(
-                              'Sign Up',
+                              'Register Now',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 16, 116, 230),
@@ -310,57 +317,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       ),
-
-                      const SizedBox(height: 25.0),
-
-                      // Divider + Social icons
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(child: Divider(thickness: 0.7, color: Colors.grey)),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Text('Or continue with', style: TextStyle(color: Colors.black45)),
-                          ),
-                          Expanded(child: Divider(thickness: 0.7, color: Colors.grey)),
-                        ],
-                      ),
-                      const SizedBox(height: 25.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          FaIcon(FontAwesomeIcons.facebook),
-                          FaIcon(FontAwesomeIcons.twitter),
-                          FaIcon(FontAwesomeIcons.google),
-                          FaIcon(FontAwesomeIcons.apple),
-                        ],
-                      ),
-
-                      const SizedBox(height: 25.0),
-
-                      // Guest button (remove if you don't want guest mode)
-                      SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton(
-                          onPressed: _continueAsGuest,
-                          style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            side: const BorderSide(color: Color.fromARGB(255, 61, 67, 73)),
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                          ),
-                          child: const Text(
-                            'Continue as Guest',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 61, 67, 73),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 20.0),
                     ],
                   ),
                 ),
@@ -386,7 +342,7 @@ class LoginScaffold extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-              "https://cpuhivcyhvqayzgdvdaw.supabase.co/storage/v1/object/public/appimages/loging%20bacvkground.jpg",
+              "https://cpuhivcyhvqayzgdvdaw.supabase.co/storage/v1/object/public/appimages/pexels-freestockpro-12955896.jpg",
             ),
             fit: BoxFit.cover,
           ),

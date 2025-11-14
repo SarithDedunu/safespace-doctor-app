@@ -12,10 +12,10 @@ class OnboardingScreen extends StatelessWidget {
 
     final List<PageViewModel> list = [
       PageViewModel(
-        title: 'Welcome to SafeSpace',
+        title: 'Welcome to SafeSpace Doctor',
         body:
-            'A supportive space to care for your mental health with AI guidance.',
-        image: Image.asset('assets/images/welcome.png', height: 250),
+            'Connect with patients, manage appointments, and provide support anytime, anywhere.',
+        image: Image.asset('assets/screen1.png', height: 250),
         decoration: PageDecoration(
           titleTextStyle: TextStyle(
             fontSize: 24,
@@ -29,11 +29,11 @@ class OnboardingScreen extends StatelessWidget {
         ),
       ),
       PageViewModel(
-        title: 'Your Mental Wellness, All in One Place',
+        title: 'Seamless Appointments & Communication',
         body:
-            'Everything you need to support your mental health journey',
+            'View patient details, conduct video sessions, and stay updated with real-time notifications.',
 
-        image: Image.asset('assets/images/welcome.png', height: 250),
+        image: Image.asset('assets/screen2.png', height: 250),
         decoration: PageDecoration(
           titleTextStyle: TextStyle(
             fontSize: 24,

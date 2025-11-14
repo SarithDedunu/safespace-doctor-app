@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
         children: [
           // Background Image
           Image.network(
-            'https://cpuhivcyhvqayzgdvdaw.supabase.co/storage/v1/object/public/appimages/welcomebackground.jpg', // placeholder
+            'https://cpuhivcyhvqayzgdvdaw.supabase.co/storage/v1/object/public/appimages/Untitled%20design%20(12).png', // placeholder
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
@@ -26,18 +26,22 @@ class WelcomeScreen extends StatelessWidget {
           SafeArea(
             child: Column(
               children: [
-                // Welcome text section - made more flexible
+                // Welcome text section - pushed down with more flex and top padding
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    padding: const EdgeInsets.only(
+                      left: 40.0,
+                      right: 40.0,
+                      top: 80.0, // Push content down from top
+                    ),
                     child: Center(
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Text(
-                              'Welcome Back!',
+                              'Welcome Back! Doctor',
                               style: TextStyle(
                                 fontSize: 36.0,
                                 fontWeight: FontWeight.w600,
@@ -52,7 +56,7 @@ class WelcomeScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 16),
                             const Text(
-                              'Enter personal details to your employee account',
+                              'Healing begins with you.Let’s make care accessible and secure for everyone.',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(
@@ -71,9 +75,9 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Buttons section - made more compact
+                // Buttons section - reduced flex to push up
                 Expanded(
-                  flex: 1,
+                  flex: 0,
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(
@@ -81,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
                       vertical: 20.0,
                     ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start, // Changed from end
                       children: [
                         WelcomeButton(
                           buttonText: 'Login',
@@ -91,7 +95,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 12),
                         WelcomeButton(
-                          buttonText: 'Sign Up',
+                          buttonText: 'Regiter Now',
                           onTap: const RegistrationScreen(),
                           color: Colors.green,
                           textColor: Colors.white,
